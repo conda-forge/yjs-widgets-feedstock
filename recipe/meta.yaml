@@ -6,17 +6,17 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yjs_widgets-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/yjs_widgets-{{ version }}.tar.gz
   sha256: 24cbb20c9f782fe886fec0d8be5de1156fd598cd18eb43475a83752b6f6b61de
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - yarn =3
     - hatchling
@@ -24,12 +24,13 @@ requirements:
     - hatch-jupyter-builder
     - jupyterlab >=4.0.0,<5
   run:
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   requires:
     - pip
     - jupyterlab >=4,<5
+    - python {{ python_min }}
   imports:
     - yjs_widgets
   commands:
