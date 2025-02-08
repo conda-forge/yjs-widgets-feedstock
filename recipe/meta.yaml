@@ -1,5 +1,5 @@
 {% set name = "yjs-widgets" %}
-{% set version = "0.3.9" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/yjs_widgets-{{ version }}.tar.gz
-  sha256: 6641c58865ab07d2003722882b6808f8fe1893824250d2966e7c642b9926e0b7
+  sha256: 31448f51b3f16c8e6790c613630a280ecb22761c4b790f218eefabde27bde472
 
 build:
   noarch: python
