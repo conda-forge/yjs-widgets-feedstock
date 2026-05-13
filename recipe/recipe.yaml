@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: yjs-widgets
-  version: "0.5.0"
+  version: "0.5.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/yjs_widgets-${{ version }}.tar.gz
-  sha256: d7868f3facdad1b68979ce8dab5534c8cfaf681c285d4f01b1986afd0c50ebfe
+  sha256: ff382697588b72c6f46a53299872664fe027e5ee75302e7740bb30df274d7b4a
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install --no-deps --no-build-isolation -vv .
 
