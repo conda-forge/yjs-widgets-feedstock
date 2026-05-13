@@ -51,8 +51,8 @@ about:
   summary: A JupyterLab extension for widgets based on Yjs
   license: BSD-3-Clause
   license_file: LICENSE
-  homepage: https://github.com/davidbrochart/yjs-widgets
-  repository: https://github.com/davidbrochart/yjs-widgets
+  homepage: https://github.com/QuantStack/yjs-widgets
+  repository: https://github.com/QuantStack/yjs-widgets
 
 extra:
   recipe-maintainers:
