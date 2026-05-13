@@ -3,13 +3,13 @@ About yjs-widgets-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/yjs-widgets-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/davidbrochart/yjs-widgets
+Home: https://github.com/QuantStack/yjs-widgets
 
 Package license: BSD-3-Clause
 
 Summary: A JupyterLab extension for widgets based on Yjs
 
-Development: https://github.com/davidbrochart/yjs-widgets
+Development: https://github.com/QuantStack/yjs-widgets
 
 Current build status
 ====================
