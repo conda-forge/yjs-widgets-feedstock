@@ -2,50 +2,91 @@ schema_version: 1
 
 context:
   name: yjs-widgets
-  version: "0.5.0"
+  version: "0.5.1"
 
-package:
+recipe:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/yjs_widgets-${{ version }}.tar.gz
-  sha256: d7868f3facdad1b68979ce8dab5534c8cfaf681c285d4f01b1986afd0c50ebfe
+  sha256: ff382697588b72c6f46a53299872664fe027e5ee75302e7740bb30df274d7b4a
 
 build:
-  number: 1
-  noarch: python
-  script: ${{ PYTHON }} -m pip install --no-deps --no-build-isolation -vv .
+  number: 0
 
-requirements:
-  host:
-    - python ${{ python_min }}.*
-    - pip
-    - yarn =3
-    - hatchling
-    - hatch-nodejs-version
-    - hatch-jupyter-builder
-    - jupyterlab >=4.0.0,<5
-  run:
-    - python >=${{ python_min }}
-
-tests:
-  - python:
-      imports:
-        - yjs_widgets
-      pip_check: true
-      python_version: ${{ python_min }}
-  - requirements:
-      run:
+outputs:
+  - package:
+      name: ${{ name|lower }}
+    build:
+      noarch: python
+      script: ${{ PYTHON }} -m pip install --no-deps --no-build-isolation -vv .
+    requirements:
+      host:
+        - python ${{ python_min }}.*
         - pip
-        - jupyterlab >=4,<5
-        - python ==${{ python_min }}
-    script:
-      - if: unix
-        then:
-          - jupyter labextension list
-          - jupyter labextension list 1>labextensions 2>&1
-          - cat labextensions | grep "yjs-widgets.*OK"
+        - yarn =3
+        - hatchling
+        - hatch-nodejs-version
+        - hatch-jupyter-builder
+        - jupyterlab >=4.0.0,<5
+      run:
+        - python >=${{ python_min }}
+    tests:
+      - python:
+          imports:
+            - yjs_widgets
+          pip_check: true
+          python_version: ${{ python_min }}
+      - requirements:
+          run:
+            - pip
+            - jupyterlab >=4,<5
+            - python ==${{ python_min }}
+        script:
+          - if: unix
+            then:
+              - jupyter labextension list
+              - jupyter labextension list 1>labextensions 2>&1
+              - cat labextensions | grep "yjs-widgets.*OK"
+
+  - package:
+      name: ${{ name|lower }}-collection
+    build:
+      noarch: python
+      script: |
+        ${{ PYTHON }} -m pip install \
+          --no-deps --no-build-isolation -vv \
+          examples/yjs-widget-controls/
+    requirements:
+      host:
+        - python ${{ python_min }}.*
+        - pip
+        - yarn =3
+        - hatchling
+        - hatch-nodejs-version
+        - hatch-jupyter-builder
+        - jupyterlab >=4.0.0,<5
+      run:
+        - ${{ pin_subpackage(name | lower, exact=true) }}
+        - python >=${{ python_min }}
+    tests:
+      - python:
+          imports:
+            - yjs_widget_controls
+          pip_check: false
+          python_version: ${{ python_min }}
+      - requirements:
+          run:
+            - pip
+            - jupyterlab >=4,<5
+            - python ==${{ python_min }}
+        script:
+          - if: unix
+            then:
+              - jupyter labextension list
+              - jupyter labextension list 1>labextensions 2>&1
+              - cat labextensions | grep "yjs-widget-controls.*OK"
 
 about:
   summary: A JupyterLab extension for widgets based on Yjs

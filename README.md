@@ -3,13 +3,13 @@ About yjs-widgets-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/yjs-widgets-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/davidbrochart/yjs-widgets
+Home: https://github.com/QuantStack/yjs-widgets
 
 Package license: BSD-3-Clause
 
 Summary: A JupyterLab extension for widgets based on Yjs
 
-Development: https://github.com/davidbrochart/yjs-widgets
+Development: https://github.com/QuantStack/yjs-widgets
 
 Current build status
 ====================
@@ -29,6 +29,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-yjs--widgets-green.svg)](https://anaconda.org/conda-forge/yjs-widgets) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/yjs-widgets.svg)](https://anaconda.org/conda-forge/yjs-widgets) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/yjs-widgets.svg)](https://anaconda.org/conda-forge/yjs-widgets) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/yjs-widgets.svg)](https://anaconda.org/conda-forge/yjs-widgets) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-yjs--widgets--collection-green.svg)](https://anaconda.org/conda-forge/yjs-widgets-collection) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/yjs-widgets-collection.svg)](https://anaconda.org/conda-forge/yjs-widgets-collection) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/yjs-widgets-collection.svg)](https://anaconda.org/conda-forge/yjs-widgets-collection) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/yjs-widgets-collection.svg)](https://anaconda.org/conda-forge/yjs-widgets-collection) |
 
 Installing yjs-widgets
 ======================
@@ -40,16 +41,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `yjs-widgets` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `yjs-widgets, yjs-widgets-collection` can be installed with `conda`:
 
 ```
-conda install yjs-widgets
+conda install yjs-widgets yjs-widgets-collection
 ```
 
 or with `mamba`:
 
 ```
-mamba install yjs-widgets
+mamba install yjs-widgets yjs-widgets-collection
 ```
 
 It is possible to list all of the versions of `yjs-widgets` available on your platform with `conda`:
