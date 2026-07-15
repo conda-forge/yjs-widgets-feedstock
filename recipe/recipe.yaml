@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: yjs-widgets
-  version: "0.5.2"
+  version: "0.6.0"
 
 recipe:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/yjs_widgets-${{ version }}.tar.gz
-  sha256: 73444d9469f2c7e8bfa4931aaf6a6f8786086a564749f425f6b56e2a446144dc
+  sha256: 6eaf3673a5147bccf20d32f63bc40a387d9edee8d22bdefe85dce3d2f9f6b5e0
 
 build:
   number: 0
